@@ -1,0 +1,48 @@
+<div class="app-wrapper">
+  <section id="featured-hero" class="hero-section"></section>
+
+  <header id="main-header">
+    <div class="brand-identity">
+      <div class="header-top">
+        <h1 class="main-logo">GLOBAL HOOPS</h1>
+        <div class="header-controls">
+          <input type="text" id="search-bar" placeholder="SEARCH PLAYER / BRAND..." />
+          <select id="price-filter">
+            <option value="all">ALL PRICES</option>
+            <option value="150">UNDER $150</option>
+            <option value="200">UNDER $200</option>
+          </select>
+          <button id="theme-toggle" class="mode-toggle">DARK MODE</button>
+        </div>
+      </div>
+      <div class="header-details">
+        <span class="collection-tag">SIGNATURE ARCHIVE // 2026</span>
+        <span id="live-clock" class="location-tag">00:00:00</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <section class="drop-group">
+      <div class="section-header">
+        <h2 class="section-label">Future Releases</h2>
+        <span class="status-indicator live">LIVE TRACKING</span>
+      </div>
+      <div id="future-grid" class="shoe-grid"></div>
+    </section>
+
+    <section class="drop-group">
+      <div class="section-header">
+        <h2 class="section-label">Recent Drops</h2>
+      </div>
+      <div id="recent-grid" class="shoe-grid"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal-overlay">
+    <button class="modal-close">← BACK TO FEED</button>
+    <div class="modal-window">
+      <div id="modal-body" class="modal-layout"></div>
+    </div>
+  </div>
+</div>
