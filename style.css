@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap');
+
+:root {
+  --white: #ffffff; --black: #000000; --accent: #ff4d00;
+  --grey-light: #f6f6f6; --border: #e5e5e5; --success: #00ff88;
+}
+
+body.dark-theme { --white: #0a0a0a; --black: #ffffff; --grey-light: #1a1a1a; --border: #333333; }
+
+body { margin: 0; background-color: var(--white); color: var(--black); font-family: 'Inter', sans-serif; text-transform: uppercase; transition: background 0.3s; }
+body.modal-open { overflow: hidden; }
+
+/* Hero Section */
+.hero-section { background: #000; color: #fff; min-height: 50vh; display: flex; align-items: center; justify-content: center; padding: 40px 5%; overflow: hidden; }
+.hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1200px; width: 100%; }
+.hero-text h3 { color: var(--accent); font-size: 0.7rem; letter-spacing: 5px; }
+.hero-text h2 { font-size: clamp(2rem, 6vw, 5rem); margin: 10px 0; line-height: 0.8; }
+.hero-img img { width: 120%; transform: rotate(-10deg); filter: drop-shadow(0 20px 50px rgba(255,255,255,0.1)); }
+
+/* Layout */
+header { padding: 40px 5% 30px; border-bottom: 2px solid var(--black); position: sticky; top: 0; background: var(--white); z-index: 100; }
+.header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.main-logo { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; margin: 0; letter-spacing: -3px; }
+.header-controls { display: flex; gap: 10px; }
+#search-bar, #price-filter { background: var(--grey-light); border: 1px solid var(--border); color: var(--black); padding: 10px; font-size: 0.7rem; }
+.mode-toggle { background: var(--black); color: var(--white); border: none; padding: 10px 20px; font-weight: 900; font-size: 0.6rem; cursor: pointer; }
+
+.content-container { padding: 0 5% 100px; }
+.shoe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; margin-top: 30px; }
+.shoe-card { cursor: pointer; position: relative; }
+.image-container { background: var(--grey-light); height: 320px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+.image-container img { width: 85%; transition: 0.5s ease; }
+.shoe-card:hover img { transform: scale(1.05) rotate(-3deg); }
+
+/* Status Labels */
+.hype-meter { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.8); padding: 5px 10px; border-radius: 20px; font-size: 0.7rem; color: #fff; z-index: 5; }
+.stock-badge { font-size: 0.6rem; font-weight: 900; padding: 2px 6px; border-radius: 2px; margin-left: 10px; }
+.stock-sold { background: #ff0000; color: #fff; }
+.stock-low { background: #ffaa00; color: #000; }
+.stock-ok { background: var(--success); color: #000; }
+
+.brand-label { font-size: 0.6rem; color: var(--accent); font-weight: 900; margin-bottom: 5px; }
+.timer-box { background: var(--black); color: var(--white); padding: 5px 10px; font-family: monospace; font-size: 0.8rem; margin-bottom: 10px; display: inline-block;}
+.status-label { border: 1px solid var(--black); color: var(--black); font-weight: 900; font-size: 0.7rem; padding: 4px 8px; display: inline-block; margin-bottom: 10px; }
+
+/* Modal */
+.modal-overlay { display: none; position: fixed; inset: 0; background: var(--white); z-index: 9999; overflow-y: auto; animation: slideUp 0.4s ease-out; }
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.modal-window { max-width: 1000px; margin: 0 auto; padding: 100px 5%; }
+.modal-close { position: fixed; top: 30px; left: 5%; background: var(--black); color: var(--white); border: none; padding: 12px 24px; font-weight: 900; cursor: pointer; z-index: 10000; }
+.modal-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; text-transform: none; }
+.buy-btn, .notify-btn { background: var(--black); color: var(--white); border: none; padding: 20px; width: 100%; font-weight: 900; cursor: pointer; text-decoration: none; display: block; text-align: center; margin-top: 20px; }
+.buy-btn { background: var(--accent); }
+.buy-btn.disabled { background: #444; cursor: not-allowed; }
